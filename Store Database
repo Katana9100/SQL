@@ -1,0 +1,29 @@
+--Design a store database--
+
+  -table for all the items in my store-
+CREATE TABLE Clothing_Store(id INTEGER PRIMARY KEY, Item TEXT, Color TEXT, Price INTEGER, Start_Qty INTEGER, Sold_Qty INTEGER);
+
+INSERT INTO Clothing_Store VALUES(1,"T-Shirt","Red",15.50,50,20);
+INSERT INTO Clothing_Store VALUES(2,"T-Shirt", "Black", 15.50, 50, 35);
+INSERT INTO Clothing_Store VALUES(3,"T-shirt", "Purple", 15.50, 50, 26);
+INSERT INTO Clothing_Store VALUES(4,"Long Sleeve", "Black", 25.00, 45, 37);
+INSERT INTO Clothing_Store VALUES(5,"Long Sleeve", "White", 25.00, 45, 22);
+INSERT INTO Clothing_Store VALUES(6,"Long Sleeve", "Gray", 25.00, 45, 40 );
+INSERT INTO Clothing_Store VALUES(7,"Shorts", "Blue", 10.00, 45, 19);
+INSERT INTO Clothing_Store VALUES(8,"Shorts", "Black", 10.00, 45, 29);
+INSERT INTO Clothing_Store VALUES(9,"Shorts", "Tan", 10.00, 45, 15);
+INSERT INTO Clothing_Store VALUES(10,"Leggings", "Flower", 20.00, 60, 47);
+INSERT INTO Clothing_Store VALUES(11,"Leggings", "Striped", 20.00, 60, 31);
+INSERT INTO Clothing_Store VALUES(12,"Leggings", "Black", 20.00, 60, 52);
+INSERT INTO Clothing_Store VALUES(13,"Socks", "Pink", 5.50, 30, 21);
+INSERT INTO Clothing_Store VALUES(14,"Socks", "Black", 5.50, 30, 28);
+INSERT INTO Clothing_Store VALUES(15,"Socks", "Dots", 5.50, 30, 19);
+  
+  -display the database ordered by price-
+SELECT * FROM Clothing_Store ORDER BY Price;
+
+  -total start amount of items-
+SELECT SUM(Start_Qty)FROM Clothing_Store;
+
+  -total amount of items sold-
+SELECT SUM(Sold_Qty)FROM Clothing_Store;
