@@ -1,0 +1,145 @@
+/*For this project im going to show Actors, A movie they're in, and if they're married to each other*/
+
+/*Actor table*/
+CREATE TABLE Actors (id INTEGER PRIMARY KEY, Name TEXT);
+
+INSERT INTO Actors (Name)
+    VALUES ("Miley Cyrus");
+
+INSERT INTO Actors (Name)
+    VALUES ("Brad Pitt");
+
+INSERT INTO Actors (Name)
+    VALUES ("Taylor Lautner");
+
+INSERT INTO Actors (Name)
+    VALUES ("Blake Lively");
+
+INSERT INTO Actors (Name)
+    VALUES ("Ben Affleck");
+
+INSERT INTO Actors (Name)
+    VALUES ("Mila Kunis");
+
+INSERT INTO Actors (Name)
+    VALUES ("Ken Jeong");
+
+INSERT INTO Actors (Name)
+    VALUES ("Channing Tatum");
+
+INSERT INTO Actors (Name)
+    VALUES ("Lian Hemsworth");
+
+INSERT INTO Actors (Name)
+    VALUES ("Patrick Dempsey");
+
+INSERT INTO Actors (Name)
+    VALUES ("Angelina Jolie");
+
+INSERT INTO Actors (Name)
+    VALUES ("Ryan Reynolds");
+
+INSERT INTO Actors (Name)
+    VALUES ("Jennifer Garner");
+
+INSERT INTO Actors (Name)
+    VALUES ("Julia Roberts");
+
+INSERT INTO Actors (Name)
+    VALUES ("Ashton Kutcher");
+
+INSERT INTO Actors (Name)
+    VALUES ("Jenna Dewan");
+
+/*Movie table*/    
+CREATE TABLE Movies (id INTEGER PRIMARY KEY, Movie TEXT);
+
+INSERT INTO Movies (Movie)
+    VALUES ("LOL");
+    
+INSERT INTO Movies (Movie)
+    VALUES ("Fight Club");
+
+INSERT INTO Movies (Movie) 
+    VALUES ("Grown Ups");
+    
+INSERT INTO Movies (Movie) 
+    VALUES ("Green Lantern");
+
+INSERT INTO Movies (Movie) 
+    VALUES ("Batman");
+
+INSERT INTO Movies (Movie)
+    VALUES ("Ted");
+
+INSERT INTO Movies (Movie)
+    VALUES ("Therapist #2");
+
+INSERT INTO Movies (Movie)
+    VALUES ("Magic Mike");
+    
+INSERT INTO Movies (Movie)
+    VALUES ("The Hunger Games");
+
+INSERT INTO Movies (Movie)
+    VALUES ("Enchanted");
+
+INSERT INTO Movies (Movie)
+    VALUES ("Maleficent");
+
+INSERT INTO Movies (Movie)
+    VALUES ("Deadpool");
+
+INSERT INTO Movies (Movie)
+    VALUES ("13 Going On 30");
+
+INSERT INTO Movies (Movie)
+    VALUES ("Mirror Mirror");
+
+INSERT INTO Movies (Movie) 
+    VALUES ("Jobs");
+
+INSERT INTO Movies (Movie)
+    VALUES ("The Hot Chick");
+
+/*Table for pairing the actors*/
+CREATE TABLE Actor_relations (id INTEGER PRIMARY KEY, Actor1 INTEGER, Actor2 INTEGER);
+
+INSERT INTO Actor_relations (Actor1, Actor2)
+    VALUES ("1","9");
+    
+INSERT INTO Actor_relations (Actor2)
+    VALUES ("10");
+
+INSERT INTO Actor_relations (Actor1, Actor2)
+    VALUES ("2","11");
+    
+INSERT INTO Actor_relations (Actor1)    
+    VALUES ("3");
+    
+INSERT INTO Actor_relations (Actor1, Actor2)
+    VALUES ("4","12");
+
+INSERT INTO Actor_relations (Actor1, Actor2)
+    VALUES ("5","13");
+    
+INSERT INTO Actor_relations (Actor2)    
+    VALUES ("14");
+    
+INSERT INTO Actor_relations (Actor1, Actor2)
+    VALUES ("6","15");
+    
+INSERT INTO Actor_relations (Actor1)    
+    VALUES ("7");
+    
+INSERT INTO Actor_relations (Actor1, Actor2)
+    VALUES ("8","16");
+
+/*Actors and the movie they're in*/
+SELECT Actors.Name, Movies.Movie FROM Actors
+    LEFT JOIN Movies ON Movies.id = Actors.id;
+
+/*Actors married to each other*/
+SELECT a.name as Actor1, b.name as Actor2 FROM Actor_relations
+    LEFT OUTER JOIN Actors a ON Actor_relations.Actor1 = a.id
+    LEFT OUTER JOIN ActorS b ON Actor_relations.Actor2 = b.id;
